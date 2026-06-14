@@ -1,0 +1,11 @@
+# Claude Code local settings
+.claude/settings.local.json
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+
+# Python caches (in case helper scripts are added later)
+__pycache__/
+*.pyc
