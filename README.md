@@ -16,14 +16,25 @@ The skill loads ~5K tokens of core frameworks, plus chapter modules and referenc
 
 Key frameworks covered: the **Six Keys to Investment Success**, **R-multiples** and **expectancy**, the **Golden Rule** (cut losses short / let profits run), the **random-entry** demonstration, the **four position-sizing models** (incl. percent-risk / CPR), the **12-step system-development model**, and Tharp's catalog of **judgmental biases**.
 
-## Install via the plugin marketplace
+## Install
 
-```text
-/plugin marketplace add markchen1024/trade-your-way-to-financial-freedom-skill
-/plugin install trade-your-way-to-financial-freedom@markchen-skills
+This repository **is** the skill (`SKILL.md` lives at the root). Clone it into your personal skills directory so the folder name becomes the skill name:
+
+```bash
+# macOS / Linux
+git clone https://github.com/markchen1024/trade-your-way-to-financial-freedom-skill.git \
+  ~/.claude/skills/trade-your-way-to-financial-freedom
 ```
 
-Then restart your session and use it:
+```powershell
+# Windows (PowerShell)
+git clone https://github.com/markchen1024/trade-your-way-to-financial-freedom-skill.git `
+  "$env:USERPROFILE\.claude\skills\trade-your-way-to-financial-freedom"
+```
+
+> The destination folder name (`trade-your-way-to-financial-freedom`) must match the `name:` in `SKILL.md`. Restart your Claude Code session afterward so the skill is discovered.
+
+## Use it
 
 ```text
 Ask trade-your-way-to-financial-freedom about expectancy
@@ -31,27 +42,16 @@ Ask trade-your-way-to-financial-freedom about position sizing
 Ask trade-your-way-to-financial-freedom for ch06
 ```
 
-## Install manually (without the marketplace)
-
-Clone the skill folder into your personal skills directory:
-
-```bash
-git clone https://github.com/markchen1024/trade-your-way-to-financial-freedom-skill.git
-cp -r trade-your-way-to-financial-freedom-skill/skills/trade-your-way-to-financial-freedom \
-      ~/.claude/skills/
-```
+Or just ask "what chapters do you have?" to browse the index.
 
 ## Repository layout
 
 ```
-.claude-plugin/
-  plugin.json         # plugin manifest (this repo is the root plugin)
-  marketplace.json    # marketplace catalog (this repo is also a marketplace)
-skills/
-  trade-your-way-to-financial-freedom/
-    SKILL.md
-    chapters/…
-    glossary.md  patterns.md  cheatsheet.md
+SKILL.md            # core frameworks + chapter & topic index (resident)
+chapters/           # ch01–ch13, loaded on demand
+glossary.md         # key terms
+patterns.md         # techniques & models
+cheatsheet.md       # decision rules & formulas
 ```
 
 ## Credit & copyright
